@@ -12,6 +12,15 @@ object ex2 extends App {
     a
   }
 
+  def swapAdjacentsRecursive(a: Array[Int]): Array[Int] = {
+    if (a.length < 2) a
+    else if (a.length == 2) a.reverse
+    else swapAdjacents(Array(a.head, a.tail.head)) ++ swapAdjacents(a.tail.tail)
+  }
+
   println(swapAdjacents(Array(1, 2, 3, 4, 5, 6)).mkString("Array(", ", ", ")"))
   println(swapAdjacents(Array(1, 2, 3, 4, 5)).mkString("Array(", ", ", ")"))
+
+  println(swapAdjacentsRecursive(Array(1, 2, 3, 4, 5, 6)).mkString("Array(", ", ", ")"))
+  println(swapAdjacentsRecursive(Array(1, 2, 3, 4, 5)).mkString("Array(", ", ", ")"))
 }
