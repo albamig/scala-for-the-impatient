@@ -1,0 +1,2 @@
+This is a simple count test
+This program should count the number of each word
